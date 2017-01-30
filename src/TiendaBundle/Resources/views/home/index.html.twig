@@ -1,0 +1,38 @@
+{% extends "base.html.twig"%}
+
+{% block title %}Principal{% endblock %}
+
+{% block body %}
+<h1>Hola Mundo</h1>
+<h3>Prueba desde {{ titulo }}</h3>
+<b>{{ nombres }}</b>
+<h2>Mes de {{ mes }}</h2>
+
+<!-- comentario -->
+{# Uso de condicionales #}
+{% if total > 80 %}
+    <b>cantidad mayor a $80</b>
+{% endif %}
+
+<hr/>
+
+{# Setting values #}
+
+{% set test = 'Saludos desde Twig' %}
+
+{{ test|upper }}
+
+<hr/>
+
+Método: {{ app.request.method }}
+
+<hr/>
+
+	
+{{ "now"|date("d/m/Y") }}
+
+{% endblock %}
+
+{% block javascripts %}
+<!-- jquery -->
+{% endblock %}

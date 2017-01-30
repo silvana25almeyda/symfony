@@ -1,0 +1,22 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+<h2>Lista de Roles</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rol in roles %}
+        <tr>
+            <th>{{ rol.id }}</th>
+            <th>{{ rol.nombre }}</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
