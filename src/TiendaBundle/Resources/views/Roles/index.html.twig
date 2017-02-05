@@ -8,6 +8,9 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>&nbsp;</th>
+        <th>&nbsp;</th>
+
         </tr>
     </thead>
     <tbody>
@@ -15,8 +18,13 @@
         <tr>
             <th>{{ rol.id }}</th>
             <th>{{ rol.nombre }}</th>
+            <td><a href="editar/{{ rol.id }}">Editar</a></td>
+            <td><a href="eliminar/{{ rol.id }}">Eliminar</a></td>
+
         </tr>
         {% endfor %}
     </tbody>
 </table>
+        
+        <a href="registrar/" class="btn btn-default">Nuevo</a>
 {% endblock %}

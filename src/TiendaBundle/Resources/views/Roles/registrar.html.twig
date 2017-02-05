@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+<form action="../registrar/" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Registro de Rol</legend>
+        <label>Nombre</label><input type="text" name="nombre" maxlength="20"/>
+        <input type="submit" value="Guardar" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="../" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+<form action="../../editar/{{ rol.id }}/" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Actualizar de Rol</legend>
+        <input type="hidden" name="id" value="{{ rol.id }}"/>
+        <label>Nombre</label><input type="text" name="nombre" value="{{ rol.nombre }}" maxlength="20"/>
+        <input type="submit" value="Guardar" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="../../" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}
+
