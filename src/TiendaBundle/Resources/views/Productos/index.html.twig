@@ -1,0 +1,49 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+<?php //var_dump($productos) ?>
+<table class="table">
+    <h2>Lista de Productos</h2>
+    <colgroup>
+        <col width="80"/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col width="80"/>
+        <col width="80"/>
+    </colgroup>
+    <thead>
+        <th>ID</th>
+        <th>CATEGORIA</th>
+        <th>NOMBRE</th>
+        <th>DESCRIPCIÓN</th>
+        <th>PRECIO</th>
+        <th>STOCK</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </thead>
+    <tbody>
+    {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.categoria.nombre }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.stock }}</td>
+            <td><a href="{{ path('tienda_productos_editar', { 'id' : producto.id }) }}" class="btn btn-warning btn-sm">Editar</a></td>
+            <td><a href="{{ path('tienda_productos_eliminar', { 'id' : producto.id }) }}" class="btn btn-danger btn-sm">Eliminar</a></td>
+        </tr>
+    {% endfor %}
+   </tbody>
+</table>
+
+<br/>
+
+<a href="{{ path('tienda_productos_registrar') }}" class="btn btn-default">Nuevo</a>
+
+{% endblock %}
+
+

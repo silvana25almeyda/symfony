@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends "TiendaBundle::base.html.twig" %}
 
 {% block body %}
     
 <form action="../registrar/" method="POST" class="ligthform">
     <fieldset>
         <legend>Registro de Rol</legend>
-        <label>Nombre</label><input type="text" name="nombre" maxlength="20"/>
+        <label>Nombre</label><input type="text" name="nombre" maxlength="20" class="form-control"/>
         <input type="submit" value="Guardar" class="btn btn-primary"/>
     </fieldset>
 </form>

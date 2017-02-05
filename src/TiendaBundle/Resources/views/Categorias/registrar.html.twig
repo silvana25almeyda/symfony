@@ -1,0 +1,17 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+    
+<form action="{{ path('tienda_categorias_registrar') }}" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Registro de Categorías</legend>
+        <label>Nombre</label><input type="text" name="nombre" maxlength="20" class="form-control"/><br/>
+        <input type="submit" value="Guardar" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="{{ path('tienda_categorias_index') }}" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}

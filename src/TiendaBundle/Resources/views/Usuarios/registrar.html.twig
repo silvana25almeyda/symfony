@@ -1,0 +1,25 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+    
+<form action="{{ path('tienda_usuarios_registrar') }}" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Registro de Usuario</legend>
+        <label>Username</label><input type="text" name="username" maxlength="20" class="form-control"/><br/>
+        <label>Password</label><input type="password" name="password" maxlength="40" class="form-control"/><br/>
+        <label>Nombres</label><input type="text" name="nombres" maxlength="100" class="form-control"/><br/>
+        <label>Email</label><input type="email" name="email" maxlength="100" class="form-control"/><br/>
+        <label>Rol</label><select name="roles_id" class="form-control">
+            {% for rol in roles %}
+                <option value="{{ rol.id }}">{{ rol.nombre }}</option>
+            {% endfor %}
+        </select><br/>
+        <input type="submit" value="Guardar" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="{{ path('tienda_usuarios_index') }}" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}

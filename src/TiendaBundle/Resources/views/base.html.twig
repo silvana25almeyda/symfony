@@ -38,8 +38,9 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a></li>
                         <li><a href="{{ path('tienda_roles_index') }}">Roles</a></li>
-                        <li><a href="">Usuarios</a></li>
-                        <li><a href="">Productos</a></li>
+                        <li><a href="{{ path('tienda_usuarios_index') }}">Usuarios</a></li>
+                        <li><a href="{{ path('tienda_categorias_index') }}">Categorías</a></li>
+                        <li><a href="{{ path('tienda_productos_index') }}">Productos</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -53,7 +54,7 @@
                             </ul>
                         </li>
                     </ul>
-
+                        
                     <ul class="nav navbar-nav navbar-right">
                         <li></li>
                         <li class="dropdown">
@@ -61,7 +62,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#">Mis datos</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li>Cerrar Sesión</li>
+                                <li><a href="{{ path('logout') }}">Cerrar Sesión</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -71,8 +72,9 @@
         
         <div class="container-fluid">
             
+            
             {% for flashMessage in app.session.flashbag.get('notice') %}
-                <div class="flash-notice">
+                <div class="alert alert-success">
                     {{ flashMessage }}
                 </div>
             {% endfor %}
@@ -83,5 +85,12 @@
         <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {% block javascripts %}{% endblock %}
+        
+        
+        <footer class="footer">
+        <div class="container-fluid">
+            <div class="text-footer">Todos los Derechos Reservados {{ "now"|date("Y") }}</div>
+        </div>
+    </footer>
     </body>
 </html>

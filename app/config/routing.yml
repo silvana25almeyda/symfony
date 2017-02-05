@@ -11,3 +11,5 @@ tienda:
     resource: "@TiendaBundle/Controller/"
     type:     annotation
     
+logout:
+    path: /logout

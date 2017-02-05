@@ -1,0 +1,27 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+    
+<form action="{{ path('tienda_productos_registrar') }}" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Registro de Productos</legend>
+        
+        <label>Nombre</label><input type="text" name="nombre" maxlength="100" class="form-control"/><br/>
+        <label>Descripcion</label><input type="text" name="descripcion" class="form-control"/><br/>
+        <label>Precio</label><input type="text" name="precio"  class="form-control"/><br/>
+        <label>Stock</label><input type="text" name="stock"  class="form-control"/><br/>
+        <label>Categoria</label><select name="categorias_id" class="form-control">
+            <option value="">Seleccionar</option>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+            {% endfor %}
+        </select><br/>
+        <input type="submit" value="Guardar" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="{{ path('tienda_productos_index') }}" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}

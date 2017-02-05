@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends "TiendaBundle::base.html.twig" %}
 
 {% block body %}
     
@@ -6,7 +6,7 @@
     <fieldset>
         <legend>Actualizar de Rol</legend>
         <input type="hidden" name="id" value="{{ rol.id }}"/>
-        <label>Nombre</label><input type="text" name="nombre" value="{{ rol.nombre }}" maxlength="20"/>
+        <label>Nombre</label><input type="text" name="nombre" value="{{ rol.nombre }}" maxlength="20" class="form-control"/>
         <input type="submit" value="Guardar" class="btn btn-primary"/>
     </fieldset>
 </form>

@@ -1,0 +1,21 @@
+{% extends "TiendaBundle::base.html.twig" %}
+
+{% block body %}
+    
+<form action="{{ path('tienda_categorias_editar', { 'id' : categoria.id }) }}" method="POST" class="ligthform">
+    <fieldset>
+        <legend>Actualizar Categoria</legend>
+        <input type="hidden" name="id" value="{{ categoria.id }}"/>
+        <label>Categoria</label><input type="text" name="nombre" maxlength="20" class="form-control" value="{{ categoria.nombre }}"/><br/>
+        
+        <input type="submit" value="Guardar"/>
+    </fieldset>
+</form>
+
+<br/>
+
+<a href="{{ path('tienda_categorias_index') }}" class="btn btn-default">&lt;&lt; Regresar</a>
+
+{% endblock %}
+
+
